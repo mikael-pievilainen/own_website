@@ -1,2 +1,6 @@
-PLAYFAIR DISPLAY
+Manrope <-- in use
 
+Playfair Display
+Roboto Flex
+Oranienbaum
+Lexend
