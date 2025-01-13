@@ -9,13 +9,18 @@
     --ff: "Manrope", serif;
     --h1: bold 54px/64px var(--ff);
     --h2: bold 36px/36px var(--ff);
-    --h3: bold 24px/30px var(--ff);
+    --h3: 24px/30px var(--ff);
     --links: bold 16px/18px var(--ff);
     --p: 18px/30px var(--ff);
     --subtext: bold 12px/20px var(--ff);
     --transition: 0.3s ease-in-out;
     --shadow: #00000030 0px 0px 10px 0px;
     --shadowdark: #00000030 0px 5px 10px 5px;
+
+    /* plans button style */
+    --h: 33;
+	--s: 90%;
+	--l: 90%;
 }
 
 html {
@@ -26,15 +31,15 @@ body {
     background: var(--colorBG);
 }
 
-/*-------- Header Section --------*/
+.Container {
+    padding: 0px 2%;
+}
+
+/*---------------- Header Section ----------------*/
 
 header {
    /* background-image: linear-gradient(var(--colorsecondary), var(--colorBG));*/
     
-}
-
-.Container {
-    padding: 0px 2%;
 }
 
 .Logo {
@@ -154,9 +159,126 @@ nav ul li a {
     color: transparent;
 } */
 
-/*-------- Body Section --------*/
+/*---------------- Hero Section ----------------*/
 
-h1 { font: var(--h1); }
-        h2 { font: var(--h2); }
-        h3 { font: var(--h3); }
-        p { font: var(--p); }
+#hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.hero-text {
+    flex-direction: column;
+    text-align: center;display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font: var(--h1);
+    margin: 0px 0px 20px 0px;
+}
+
+h2 {
+    font: var(--h2);
+}
+
+h3 {
+    font: var(--h3);
+    margin: 0px 0px 40px 0px;
+}
+
+.hero-button {
+    text-decoration: none;
+    font: var(--links);
+    user-select: none;
+    font-size: clamp(1.2rem, 5vw + 1rem, 2.5rem);
+    width: 7em;
+    height: 2.5em;
+    border-radius: 0.5em;
+    background-image: linear-gradient(var(--colorprimary),var(--coloraccent));
+    
+    box-shadow:
+          0 -0.125em 0.25em #0002,
+          0 0.25em 0.25em hsl(var(--h) var(--s) var(--l) / 0.5),
+          0 0 0 0.1em hsl(var(--h) var(--s) var(--l) / 0.5),
+          0 0.175em 0.3em hsl(var(--h) var(--s) var(--l) / 0.5) inset,
+          0 -0.025em 0.175em hsl(var(--h) var(--s) var(--l) / 0.4) inset,
+          0 -0.25em 1em 0.3em hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+          0 0.6em 0 hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+          0 2em 1em #0004;
+    backdrop-filter: blur(0.15em);
+    position: relative;
+    display: grid;
+    place-content: center;
+    color: hsl(var(--h) var(--s) var(--l) / .7);
+    text-shadow: 
+      0.03em 0.03em #fff5,
+      -0.03em -0.03em #0005;
+    cursor: pointer;
+    transition: 0.1s ease;
+    padding-top: 0.2em;
+}
+  
+.hero-button:before {
+    content: '';
+      position: absolute;
+    top: 100%;
+    width: 80%;
+    left: 10%;
+    height: 1.5em;
+    
+    background-image: 
+      radial-gradient(
+        100% 100% at center,
+        hsla(var(--h),var(--s),80%,0.25),
+        hsla(var(--h),var(--s),80%,0) 50%);
+}
+  
+.hero-button:after {
+    content: '';
+    inset: 0;
+    top: 0.5em;
+    position: absolute;
+    
+    background-image: 
+      linear-gradient(
+        105deg,
+        transparent 20%,
+        hsl(var(--h) var(--s) var(--l) / .2) 20%,
+        hsl(var(--h) var(--s) var(--l) / .2) 30%,
+        transparent 30%,
+        transparent 32%,
+        hsl(var(--h) var(--s) var(--l) / .2) 5%,
+        hsl(var(--h) var(--s) var(--l) / .2) 40%,
+        transparent 0%
+      );
+    background-size: 400% 100%;
+    background-position: 100% 0%;
+    transition: .3s ease;
+}
+
+.hero-button:active:after {
+    background-position: -50% 0%;
+}
+  
+.hero-button:active {
+    translate: .01em .25em;
+    box-shadow:
+          0 -0.125em 0.25em #0002,
+          0 0.25em 0.25em hsl(var(--h) var(--s) var(--l) / 0.5),
+          0 0 0 0.1em hsl(var(--h) var(--s) var(--l) / 0.5),
+          0 0.175em 0.3em hsl(var(--h) var(--s) var(--l) / 0.8) inset,
+          0 -0.025em 0.175em hsl(var(--h) var(--s) var(--l) / 0.4) inset,
+          0 -0.25em 1em 0.3em hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+          0 0.6em 0 hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+          0 1em 0.5em #0004;
+    backdrop-filter: blur(0.08em);
+}
+
+.hero-button:active:before {
+    height: 1em;
+}
+
