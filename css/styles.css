@@ -26,6 +26,8 @@ body {
     background: var(--colorBG);
 }
 
+/*-------- Header Section --------*/
+
 header {
    /* background-image: linear-gradient(var(--colorsecondary), var(--colorBG));*/
     
@@ -151,6 +153,8 @@ nav ul li a {
 /* [aria-hidden] {
     color: transparent;
 } */
+
+/*-------- Body Section --------*/
 
 h1 { font: var(--h1); }
         h2 { font: var(--h2); }
