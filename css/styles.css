@@ -38,7 +38,7 @@ header {
 }
 
 .Logo {
-    width: 50px;
+    width: 40px;
     background-color: var(--colorsecondary);
     padding: 10px;
     border-radius: 5px;
@@ -64,7 +64,7 @@ nav ul {
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 15px 20px;
+    margin: 5px 20px;
     border-radius: 5px;
     padding: 5px;
 }
