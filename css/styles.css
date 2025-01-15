@@ -7,9 +7,9 @@
     --colorBG: #f0f5f9;
     --colorBG300: #bdc2c6;
     --ff: "Manrope", serif;
-    --h1: bold 54px/64px var(--ff);
+    --h1: bold 64px/64px var(--ff);
     --h2: bold 36px/36px var(--ff);
-    --h3: 24px/30px var(--ff);
+    --h3: 26px/30px var(--ff);
     --links: bold 16px/18px var(--ff);
     --p: 18px/30px var(--ff);
     --subtext: bold 12px/20px var(--ff);
@@ -171,14 +171,15 @@ nav ul li a {
 
 .hero-text {
     flex-direction: column;
-    text-align: center;display: flex;
+    text-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 h1 {
     font: var(--h1);
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 40px 0px;
 }
 
 h2 {
@@ -187,7 +188,7 @@ h2 {
 
 h3 {
     font: var(--h3);
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 60px 0px;
 }
 
 .hero-button {
@@ -198,7 +199,7 @@ h3 {
     width: 7em;
     height: 2.5em;
     border-radius: 0.5em;
-    background-image: linear-gradient(var(--colorprimary),var(--coloraccent));
+    background-image: linear-gradient(var(--colortext),var(--colorsecondary));
     
     box-shadow:
           0 -0.125em 0.25em #0002,
