@@ -64,6 +64,10 @@ header {
     border-radius: 5px;
     border: 2px solid rgb(0, 0, 0, 0.05);
     box-shadow: var(--shadow);
+    position: fixed;
+    top: 20px;
+    left: 2%;
+    z-index: 1000;
 }
 
 nav {
@@ -79,6 +83,10 @@ nav ul {
     border: 2px solid rgb(0, 0, 0, 0.05);
     padding-left: 0px;
     box-shadow: var(--shadow);
+    position: fixed;
+    top: 20px;
+    right: 2%;
+    z-index: 1000;
 }
 
 nav ul li {
@@ -112,7 +120,6 @@ nav ul li a {
     width: 100%;
 }
 
-/* Updated plans-button styles */
 .plans-button {
     --active: 0;
     color: var(--colortext);
@@ -126,7 +133,6 @@ nav ul li a {
     display: inline-block;
 }
 
-/* Create the layered structure */
 .plans-button span {
     inset: 0;
     display: grid;
@@ -145,7 +151,6 @@ nav ul li a {
     position: relative;
 }
 
-/* Layer colors */
 .plans-button span:nth-of-type(1) {
     background: var(--coloraccent);
 }
@@ -160,12 +165,10 @@ nav ul li a {
     background: var(--colorBG);
 }
 
-/* Hover and focus states */
 .plans-button:is(:hover, :focus-visible) {
     --active: 1;
 }
 
-/* Active state */
 .plans-button:active {
     --active: 0.5;
 }
@@ -182,7 +185,7 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 150px 0 150px 0;
+    margin: 200px 0 150px 0;
 }
 
 .hero-text {
@@ -194,11 +197,11 @@ nav ul li a {
 }
 
 .hero-h1 {
-    margin: 0 0 40px;
+    margin: 0 0 30px;
 }
 
 .hero-h3 {
-    margin: 0 0 60px;
+    margin: 0 0 50px;
 }
 
 .hero-website-examples {
@@ -209,19 +212,20 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1500px;
 }
 
 .hero-website,
 .hero-website2,
 .hero-website3 {
     flex: 1;
-    max-width: 450px;
-    min-width: 350px;
+    max-width: 500px;
+    min-width: 400px;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
     cursor: pointer;
+    box-shadow: var(--shadowdark);
 }
 
 .hero-website img,
@@ -269,8 +273,8 @@ nav ul li a {
     text-decoration: none;
     font: var(--links);
     user-select: none;
-    font-size: clamp(1.2rem, 5vw + 1rem, 2.5rem);
-    width: 7em;
+    font-size: clamp(1.2rem, 1vw + 1rem, 2.5rem);
+    width: 6em;
     height: 2.5em;
     border-radius: 0.5em;
     background-image: linear-gradient(var(--colortext),var(--colorsecondary));
@@ -359,10 +363,9 @@ nav ul li a {
 
 /*---------------- Content Section ----------------*/
 
-#content {
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-}
+/* #content {
+    border-bottom: 1px solid;
+} */
 
 .partners {
     display: flex;
@@ -370,49 +373,74 @@ nav ul li a {
     margin: 50px 0;
     overflow: hidden;
     width: 100%;
+    position: relative;
 }
 
 .partners-text {
     display: flex;
-    background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 0 0 30px 0;
+    width: 100%;
 }
 
 .partners-h1 {
     margin: 30px 0;
+    color: var(--colortext);
+    font: var(--h3);
+    text-align: center;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
+.partners-h1::before,
+.partners-h1::after {
+    content: "";
+    height: 1px;
+    width: 800px;
+    background-color: var(--colortext);
+    margin: 0 20px;
+}
+
+/* .partners-bottom-line {
+    height: 1px;
+    width: 1870px;
+    background-color: black;
+    margin: 30px 0 0 15px;
+} */
+
 .partners-logo {
-    background-color: white;
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-/* Updated animation styles */
 .partners-logo-row1,
 .partners-logo-row2 {
     display: flex;
     width: fit-content;
+    margin: 20px;
 }
 
 .partners-logo-row1 img,
 .partners-logo-row2 img {
-    height: 35px;
+    height: 80px;
     object-fit: contain;
     margin: 0 40px;
 }
 
-/* Modified animation properties */
 .partners-logo-row1 {
     animation: scrollLeft 30s linear infinite;
+    background-color: var(--coloraccent);
+    padding: 20px 0 20px 0;
+    box-shadow: var(--shadowdark);
 }
 
 .partners-logo-row2 {
     animation: scrollRight 30s linear infinite;
-    margin-top: 30px;
+    background-color: var(--coloraccent);
+    padding: 20px 0 20px 0;
+    box-shadow: var(--shadowdark);
 }
 
 @keyframes scrollLeft {
@@ -420,13 +448,13 @@ nav ul li a {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-30%);
     }
 }
 
 @keyframes scrollRight {
     0% {
-        transform: translateX(-50%);
+        transform: translateX(-30%);
     }
     100% {
         transform: translateX(0);
